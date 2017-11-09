@@ -27,17 +27,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     register.cpp \
-    login.cpp \
     insert.cpp \
     register.cpp
 
 HEADERS  += mainwindow.h \
     register.h \
-    login.h \
     insert.h \
     register.h
 
 FORMS    += mainwindow.ui \
-    login.ui \
     insert.ui \
     register.ui
+
+RC_ICONS = myico.ico

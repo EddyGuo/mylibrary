@@ -3,7 +3,6 @@
 #pragma execution_character_set("utf-8")
 
 #include "register.h"
-#include "login.h"
 #include "insert.h"
 #include <QMainWindow>
 #include <QDebug>
@@ -11,6 +10,12 @@
 #include <QSqlDatabase>
 #include <QSqlTableModel>
 #include <QMessageBox>
+#include <QString>
+#include <QSqlError>
+#include <QDateTime>
+#include <QDate>
+#include <QTimer>
+#include <QSqlRecord>
 
 namespace Ui {
 class MainWindow;
@@ -26,12 +31,17 @@ public:
 
 
 private:
+    QSqlTableModel *BkModel;
+    QSqlTableModel *UsrModel;
+    QSqlTableModel *LoanModel;
+    QSqlTableModel *UsrLoanModel;
     Ui::MainWindow *ui;
     QSqlDatabase db;
+    QTimer *timer;
 
-public:
-    bool dbConnect();
-    bool dbCreat();
+    int user_type;
+    int book_store;
+    QString id;
 
     enum BkIndex
     {
@@ -55,11 +65,43 @@ public:
         UsrMax=4
     };
 
+    enum LoanIndex
+    {
+        LUsrId=0,
+        LBkId=1,
+        LDate=2,
+        LBackDate=3
+    };
+
+    enum{MANAGER,USER,VISITOR};
+
+public:
+    bool dbConnect();
+    bool dbCreat();
+    void UsrLogin();
+    void UiUpdate();
+    void MngLogin();
+
 
 private slots:
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
     void on_pushButton_4_clicked();
+    void on_pushButton_11_clicked();
+    void on_pushButton_5_clicked();
+    void on_pushButton_3_clicked();
+    void on_pushButton_6_clicked();
+    void on_pushButton_7_clicked();
+    void on_pushButton_12_clicked();
+    void on_pushButton_13_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_15_clicked();
+    void on_pushButton_14_clicked();
+    void on_pushButton_clicked();
+    void on_pushButton_16_clicked();
+    void on_pushButton_8_clicked();
+    void on_pushButton_18_clicked();
+    void on_pushButton_17_clicked();
 };
 
 

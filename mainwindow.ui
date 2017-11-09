@@ -35,7 +35,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>11</x>
@@ -50,12 +50,21 @@
           <property name="placeholderText">
            <string>用户名</string>
           </property>
+          <property name="clearButtonEnabled">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
          <widget class="QLineEdit" name="lineEdit_5">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
           <property name="placeholderText">
            <string>密码</string>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -68,7 +77,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>11</x>
@@ -140,6 +149,28 @@
         </item>
        </layout>
       </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>0</y>
+         <width>451</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 48pt &quot;楷体&quot;;</string>
+       </property>
+       <property name="text">
+        <string>虚拟智慧图书馆</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::AutoText</enum>
+       </property>
+       <property name="indent">
+        <number>0</number>
+       </property>
+      </widget>
      </widget>
     </item>
     <item>
@@ -160,7 +191,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -202,13 +233,20 @@
              <x>20</x>
              <y>20</y>
              <width>161</width>
-             <height>391</height>
+             <height>471</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
             <property name="spacing">
              <number>24</number>
             </property>
+            <item>
+             <widget class="QPushButton" name="pushButton_18">
+              <property name="text">
+               <string>返回主表</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QLineEdit" name="lineEdit">
               <property name="inputMask">
@@ -229,6 +267,16 @@
               <property name="placeholderText">
                <string>书名</string>
               </property>
+              <property name="clearButtonEnabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>查询</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -239,51 +287,13 @@
               <property name="placeholderText">
                <string>作者</string>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox">
-              <item>
-               <property name="text">
-                <string>2016年后</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>2015年后</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>2014年后</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>2013年后</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>2012年后</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>2011年前</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="checkBox">
-              <property name="text">
-               <string>可借</string>
+              <property name="clearButtonEnabled">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="pushButton_16">
               <property name="text">
                <string>查询</string>
               </property>
@@ -307,6 +317,20 @@
              <widget class="QPushButton" name="pushButton_4">
               <property name="text">
                <string>录入</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_5">
+              <property name="text">
+               <string>提交修改/刷新</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_6">
+              <property name="text">
+               <string>撤销修改</string>
               </property>
              </widget>
             </item>
@@ -391,13 +415,20 @@
              <x>20</x>
              <y>20</y>
              <width>161</width>
-             <height>191</height>
+             <height>301</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <property name="spacing">
              <number>24</number>
             </property>
+            <item>
+             <widget class="QPushButton" name="pushButton_17">
+              <property name="text">
+               <string>返回主表</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QLineEdit" name="lineEdit_3">
               <property name="inputMask">
@@ -418,12 +449,8 @@
               <property name="placeholderText">
                <string>用户ID</string>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="checkBox_2">
-              <property name="text">
-               <string>无借书</string>
+              <property name="clearButtonEnabled">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -438,6 +465,20 @@
              <widget class="QPushButton" name="pushButton_7">
               <property name="text">
                <string>删除</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_12">
+              <property name="text">
+               <string>提交修改/刷新</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_13">
+              <property name="text">
+               <string>撤销修改</string>
               </property>
              </widget>
             </item>
@@ -483,6 +524,141 @@
        <attribute name="title">
         <string>用户信息</string>
        </attribute>
+       <widget class="QTableView" name="tableView_3">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>1011</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>150</number>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>40</number>
+        </attribute>
+        <attribute name="verticalHeaderStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>291</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>用户</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>50</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>邮箱</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>400</y>
+          <width>261</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QPushButton" name="pushButton_14">
+           <property name="text">
+            <string>续借</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_15">
+           <property name="text">
+            <string>还书</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>借阅信息</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QTableView" name="tableView_4">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>150</number>
+          </attribute>
+          <attribute name="verticalHeaderDefaultSectionSize">
+           <number>40</number>
+          </attribute>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>

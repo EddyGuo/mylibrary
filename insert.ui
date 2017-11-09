@@ -19,7 +19,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -37,6 +37,9 @@
       <property name="placeholderText">
        <string>ISBN</string>
       </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
@@ -44,12 +47,18 @@
       <property name="placeholderText">
        <string>书名</string>
       </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
      <widget class="QLineEdit" name="lineEdit_3">
       <property name="placeholderText">
        <string>作者</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -61,12 +70,18 @@
       <property name="placeholderText">
        <string>出版时间</string>
       </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
      <widget class="QLineEdit" name="lineEdit_5">
       <property name="placeholderText">
        <string>出版社</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
